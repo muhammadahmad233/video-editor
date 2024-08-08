@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>All Format HD YouTube Video Downloader</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free online YouTube video downloader to download YouTube videos in MP4 in HD quality with high download speed." name="description">
+    <meta content="index,follow" name="robots">
+    <meta content="Free online YouTube video downloader to download YouTube videos in MP4 in HD quality with high download speed." name="keywords">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="favicon.png" rel="icon" sizes="16x16" type="image/png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .mt-5, .my-5 {
+            margin-top: 0rem!important;
+        }
+
+        #hd {    
+            width: 100%;    
+            height: auto;      
+            margin: 0 0 50px 0;    
+        }  
+
+        .custom-shape-divider-bottom-1610026357 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(0deg);
+        }
+
+        .custom-shape-divider-bottom-1610026357 svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 0px;
+        }
+
+        .custom-shape-divider-bottom-1610026357 .shape-fill {
+            fill: #FFFFFF;
+        }
+
+
+        #video-thumbnail {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .input-group .form-control {
+            flex: 1;
+            border: 2px solid #C22541; /* Border color */
+            border-radius: 4px; /* Optional: rounded corners */
+            padding: 10px; /* Optional: adjust padding */
+        }
+
+        .input-group .btn {
+            flex: 0 0 auto;
+        }
+
+        .click-btn-down {
+            background-color: #C22541; /* Button background color */
+            color: #ffffff; /* Button text color */
+            border: 1px solid #C22541; /* Border color same as background */
+        }
+
+        .click-btn-down:hover {
+            background-color: #C22541; /* Darker shade for hover effect */
+            border-color: #C22541; /* Darker border color on hover */
+        }
+
+        .main-content {
+            flex: 1;
+        }
+
+        .container {
+            text-align: center;
+            background-color: transparent;
+            padding: 20px;
+            border-radius: 8px;
+            width: 50%; /* Adjust width as needed */
+            max-width: 960px; /* Max width */
+            margin: 0 auto; /* Center the container */
+        }
+
+        header {
+            background-color: #feffff;
+            color: #0e0d0d;
+            padding: 10px 20px;
+        }
+
+        .card {
+            border: 1px solid grey;
+            padding: 0px;
+        }
+
+        .input-group {
+            display: flex;
+            width: 100%;
+        }
+
+        .input-group .form-control {
+            flex: 1;
+        }
+
+        .input-group .btn {
+            flex: 0 0 auto;
+        }
+
+        .table {
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <div style="background-image: linear-gradient(to right, #fff, #fff); min-height: 59vh; position: relative;box-sizing: border-box;min-width: 80vw;">
+            <div id="hd">    
+                <div class="col-md-6 offset-md-3 mt-5">
+                    <div class="card mt-4">
+                        <div class="card-header" style="background-color: white;border-bottom: none;">
+                            <center><h5>Download Video and Audio from Youtube</h5></center>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-12" style="border: #C22541;">
+                                    <div class="form-group">
+                                        <label class="text-weight"></label>
+                                        <div class="input-group">
+                                            <input class="form-control link" name="link" required="" type="text" placeholder="paste your youtube link here..." />
+                                            <button class="btn btn-success click-btn-down" type="button">Start →</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <form class="form-download">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group mt-4 download-video"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group mt-4">
+                                    <label class="text-weight">
+                                        <img id="video-thumbnail" src="" alt="Video Thumbnail" style="display:none;"/>
+                                    </label>
+                                </div>
+                                <div class="row" id="format-selection" style="display: none;">
+                                    <div class="col-md-12">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>File Type</th>
+                                                        <th>File Size</th>
+                                                        <th>Select</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>MP3</td>
+                                                        <td>4 MB</td>
+                                                        <td><button class="btn btn-primary format-btn" data-format="mp3" type="button" style="background-color: #C22541;">Select</button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>360 MP4</td>
+                                                        <td>20 MB</td>
+                                                        <td><button class="btn btn-primary format-btn" data-format="360" type="button" style="background-color: #C22541;">Select</button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>480 MP4</td>
+                                                        <td>30 MB</td>
+                                                        <td><button class="btn btn-primary format-btn" data-format="480" type="button" style="background-color: #C22541;">Select</button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>720 MP4</td>
+                                                        <td>50 MB</td>
+                                                        <td><button class="btn btn-primary format-btn" data-format="720" type="button" style="background-color: #C22541;">Select</button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1080 MP4</td>
+                                                        <td>70 MB</td>
+                                                        <td><button class="btn btn-primary format-btn" data-format="1080" type="button" style="background-color: #C22541;">Select</button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2k MP4</td>
+                                                        <td>100 MB</td>
+                                                        <td><button class="btn btn-primary format-btn" data-format="2k" type="button" style="background-color: #C22541;">Select</button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>4k MP4</td>
+                                                        <td>200 MB</td>
+                                                        <td><button class="btn btn-primary format-btn" data-format="4k" type="button" style="background-color: #C22541;">Select</button></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>8k MP4</td>
+                                                        <td>500 MB</td>
+                                                        <td><button class="btn btn-primary format-btn" data-format="8k" type="button" style="background-color: #C22541;">Select</button></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> 
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $(".click-btn-down").click(function() {
+                var link = $(".link").val();
+                if (link) {
+                    var videoId = getYouTubeVideoId(link);
+                    if (videoId) {
+                        var thumbnailUrl = 'https://img.youtube.com/vi/' + videoId + '/hqdefault.jpg';
+                        $("#video-thumbnail").attr("src", thumbnailUrl).show();
+                    }
+                    $("#format-selection").show(); // Show format selection
+                }
+            });
+
+            $(document).on("click", ".format-btn", function() {
+                var link = $(".link").val();
+                var format = $(this).data("format");
+                if (link && format) {
+                    downloadVideo(link, format);
+                }
+            });
+
+            function getYouTubeVideoId(url) {
+                var videoId = null;
+                var regExp = /^.*(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+                var match = url.match(regExp);
+                if (match && match[1]) {
+                    videoId = match[1];
+                }
+                return videoId;
+            }
+
+            function downloadVideo(link, format) {
+                $("#video-thumbnail").hide();
+
+                var downloadUrl = 'https://loader.to/api/button/?url=' + encodeURIComponent(link) + '&f=' + format;
+                $('.download-video').html('<iframe style="width:100%;height:60px;border:0;overflow:hidden;" scrolling="no" src="' + downloadUrl + '"></iframe>');
+            }
+        });
+    </script>
+</body>
+</html>
